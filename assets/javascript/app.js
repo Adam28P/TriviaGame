@@ -3,55 +3,55 @@ $(document).ready(function () {
     //Initialize Question Variable
     var triviaQuestions = [{
         question: "What is the name of the town where the Simpsons live?",
-        answerList: ["Shelbyville", "Springfield", "Toronto", "Queens"],
+        answerChoices: ["Shelbyville", "Springfield", "Toronto", "Queens"],
         answer: 1
     }, {
         question: "What is the name of the Simpsons' next door neighbour?",
-        answerList: ["Ned Flanders", "Moe Szyslak", "Seymour Skinner", "Barney Gumble"],
+        answerChoices: ["Ned Flanders", "Moe Szyslak", "Seymour Skinner", "Barney Gumble"],
         answer: 0
     }, {
         question: "How old is Bart?",
-        answerList: ["9", "12", "14", "10"],
+        answerChoices: ["9", "12", "14", "10"],
         answer: 3
     }, {
         question: "Who runs the Kwik-E-Mart?",
-        answerList: ["Homer", "Marge", "Apu", "Moe"],
+        answerChoices: ["Homer", "Marge", "Apu", "Moe"],
         answer: 2
     }, {
         question: "What is the name of the creator of The Simpsons?",
-        answerList: ["Hank Azaria", "Nancy Cartwright", "Seth MacFarlane", "Matt Groening"],
+        answerChoices: ["Hank Azaria", "Nancy Cartwright", "Seth MacFarlane", "Matt Groening"],
         answer: 3
     }, {
         question: "Who inventd the Flaming Moe?",
-        answerList: ["Homer", "Marge", "Moe", "Lenny"],
+        answerChoices: ["Homer", "Marge", "Moe", "Lenny"],
         answer: 0
     }, {
         question: "Who continuously tries to kill Bart?",
-        answerList: ["Sideshow Mel", "Krusty the Clown", "Sideshow Bob", "Ned Flanders"],
+        answerChoices: ["Sideshow Mel", "Krusty the Clown", "Sideshow Bob", "Ned Flanders"],
         answer: 2
     }, {
         question: "What is Marge's maiden name?",
-        answerList: ["Flanders", "Simpson", "Ziff", "Bouvier"],
+        answerChoices: ["Flanders", "Simpson", "Ziff", "Bouvier"],
         answer: 3
     }, {
         question: "What year did The Simpsons premiere?",
-        answerList: ["1993", "1989", "1999", "1990"],
+        answerChoices: ["1993", "1989", "1999", "1990"],
         answer: 1
     }, {
         question: "What is the name of Bart's favourite TV show?",
-        answerList: ["Tom and Jerry", "Icky and Sticky", "Itchy and Scratchy", "Inky and Pinky"],
+        answerChoices: ["Tom and Jerry", "Icky and Sticky", "Itchy and Scratchy", "Inky and Pinky"],
         answer: 2
     }, {
         question: "Who shot Mr. Burns?",
-        answerList: ["Maggie", "Bart", "Smithers", "Marge"],
+        answerChoices: ["Maggie", "Bart", "Smithers", "Marge"],
         answer: 0
     }, {
         question: "On what street do The Simpsons live?",
-        answerList: ["Sheepberry Terrace", "Evergreen Terrace", "Woodview Terrace", "Pine Tree Terrace"],
+        answerChoices: ["Sheepberry Terrace", "Evergreen Terrace", "Woodview Terrace", "Pine Tree Terrace"],
         answer: 1
     }, {
         question: "How many kids do Apu and Manjula have?",
-        answerList: ["7", "6", "8", "9"],
+        answerChoices: ["7", "6", "8", "9"],
         answer: 2
     }];
 
@@ -93,5 +93,33 @@ $(document).ready(function () {
         unanswered = 0;
         newQuestion();
     }
+
+    // Function to show current question and answers
+    function newQuestion(){
+        $('#message').empty();
+        $('#correctedAnswer').empty();
+        answered = true;
+        
+        $('#currentQuestion').html('Question ' + (currentQuestion + 1) + ' out of ' + triviaQuestions.length);
+        $('.question').html('<h2>' + triviaQuestions[currentQuestion].question + '</h2>');
+      
+      // Loop through answers in array
+        for(var i = 0; i < 4; i++){
+            var choices = $('<div>');
+            choices.text(triviaQuestions[currentQuestion].answerChoices[i]);
+            choices.attr({'data-index': i });
+            choices.addClass('thisChoice');
+            $('.answerChoices').append(choices);
+        }
+        countdown();
+        //clicking an answer will pause the time and setup answerPage
+        $('.thisChoice').on('click',function(){
+            userSelect = $(this).data('index');
+            clearInterval(time);
+            answerPage();
+        });
+    }
+
+
 
     });
