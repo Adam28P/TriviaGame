@@ -81,5 +81,17 @@ $(document).ready(function () {
         newGame();
     });
 
+    // Function to run when new game begins. Reset variables.
+    function newGame(){
+        $('#finalMessage').empty();
+        $('#correctAnswers').empty();
+        $('#incorrectAnswers').empty();
+        $('#unanswered').empty();
+        currentQuestion = 0;
+        correctAnswer = 0;
+        incorrectAnswer = 0;
+        unanswered = 0;
+        newQuestion();
+    }
 
     });
