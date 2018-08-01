@@ -64,6 +64,12 @@ $(document).ready(function () {
     var answered;
     var userSelect;
    
-
+    // Create message variable that has an object with different message properties
+    var messages = {
+        correct: "Cowabunga! That's right!",
+        incorrect: "D'oh! That's wrong!",
+        endTime: "Time is up!",
+        finished: "Alright! Let's see how well you did."
+    }
 
     });
