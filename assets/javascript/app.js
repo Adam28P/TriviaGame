@@ -1,156 +1,59 @@
 $(document).ready(function () {
 
-    //Initialize Global Variables
-    var questions = [{
+    //Initialize Question Variable
+    var triviaQuestions = [{
         question: "What is the name of the town where the Simpsons live?",
-        answerArray: [{
-            answer: "Shelbyville",
-            val: 0
-        }, {
-            answer: "Springfield",
-            val: "correct"
-        }, {
-            answer: "Toronto",
-            val: 0
-        }, {
-            answer: "Seinfield",
-            val: 0
-        },],
-        response: "The Simpsons live in Springfield!"
-    }, {
+        answerList: ["Shelbyville", "Springfield", "Toronto", "Queens"],
+        answer: 1
+    },{
         question: "What is the name of the Simpsons' next door neighbour?",
-        answerArray: [{
-            answer: "Ned Flanders",
-            val: "correct"
-        }, {
-            answer: "Moe Szyslak",
-            val: 0
-        }, {
-            answer: "Seymour Skinner",
-            val: 0
-        }, {
-            answer: "Barney Gumble",
-            val: 0
-        },],
-        response: "The name of the Simpsons' next door neighbour is Ned Flanders!"
-    }, {
+        answerList: ["Ned Flanders", "Moe Szyslak", "Seymour Skinner", "Barney Gumble"],
+        answer: 0
+    },{
         question: "How old is Bart?",
-        answerArray: [{
-            answer: "9",
-            val: 0
-        }, {
-            answer: "12",
-            val: 0
-        }, {
-            answer: "14",
-            val: 0
-        }, {
-            answer: "10",
-            val: "correct"
-        },],
-        response: "Bart is 10 years old!"
-    }, {
+        answerList: ["9", "12", "14", "10"],
+        answer: 3
+    },{
         question: "Who runs the Kwik-E-Mart?",
-        answerArray: [{
-            answer: "Homer",
-            val: 0
-        }, {
-            answer: "Apu",
-            val: "correct"
-        }, {
-            answer: "Lenny",
-            val: 0
-        }, {
-            answer: "Carl",
-            val: 0
-        }],
-        response: "Apu runs the Kwik-E-Mart!"
-    }, {
+        answerList: ["Homer", "Marge", "Apu", "Moe"],
+        answer: 2
+    },{
+        question: "What is the name of the creator of The Simpsons?",
+        answerList: ["Hank Azaria", "Nancy Cartwright", "Seth MacFarlane", "Matt Groening"],
+        answer: 3
+    },{
         question: "Who inventd the Flaming Moe?",
-        answerArray: [{
-            answer: "Homer",
-            val: "correct"
-        }, {
-            answer: "Marge",
-            val: 0
-        }, {
-            answer: "Moe",
-            val: 0
-        }, {
-            answer: "Bart",
-            val: 0
-        },],
-        response: "Homer invented the Flaming Moe!"
-    }, {
+        answerList: ["Homer", "Marge", "Moe", "Lenny"],
+        answer: 0
+    },{
         question: "Who continuously tries to kill Bart?",
-        answerArray: [{
-            answer: "Sideshow Mel",
-            val: 0
-        }, {
-            answer: "Krusty the Clown",
-            val: 0
-        }, {
-            answer: "Sideshow Bob",
-            val: "correct"
-        }, {
-            answer: "Ned Flanders",
-            val: 0,
-        },],
-        response: "Sideshow Bob continuosuly tries to kill Bart!"
-    }, {
+        answerList: ["Sideshow Mel", "Krusty the Clown", "Sideshow Bob", "Ned Flanders"],
+        answer: 2
+    },{
         question: "What is Marge's maiden name?",
-        answerArray: [{
-            answer: "Flanders",
-            val: 0
-        }, {
-            answer: "Simpson",
-            val: 0
-        }, {
-            answer: "Smith",
-            val: 0
-        }, {
-            answer: "Bouvier",
-            val: "correct"
-        },],
-        response: "Marge's maiden name is Bouvier!"
-    },
-    ];
-
-    var time = 20;
-    var totalQuestions = questions.length;
-    var correctAnswers = 0;
-    var incorrectAnswers = 0;
-    var unanswered = totalQuestions;
-
-    var i = 0;
-    var time = 20;
-    var intervalId;
-    var clockRunning = false;
-
-    // Functions
-
-    // Function to display questions and answers
-    function displayQuestion(x) {
-        //goes through question array to display question object
-        var display = $("<div>");
-        var displayQuestion = $("<h3>");
-        displayQuestion.text(questions[i].question);
-        display.append(displayQuestion);
-        //finds answers in question array, displays answers as buttons with values 
-        for (j = 0; j < questions[i].answerArray.length; j++) {
-            var displayAns = $("<button>");
-            displayAns.addClass("btn btn-outline-secondary ans");
-            displayAns.text(questions[i].answerArray[j].answer);
-            displayAns.val(questions[i].answerArray[j].val);
-            display.append(displayAns);
-        }
-        $("#questionArea").append(display);
-    };
-
-    
-    
-
-
+        answerList: ["Flanders", "Simpson", "Ziff", "Bouvier"],
+        answer: 3
+    },{
+        question: "What year did The Simpsons premiere?",
+        answerList: ["1993", "1989", "1999", "1990"],
+        answer: 1
+    },{
+        question: "What is the name of Bart's favourite TV show?",
+        answerList: ["Tom and Jerry", "Icky and Sticky", "Itchy and Scratchy", "Inky and Pinky"],
+        answer: 2
+    },{
+        question: "Who shot Mr. Burns?",
+        answerList: ["Maggie", "Bart", "Smithers", "Marge"],
+        answer: 0
+    },{
+        question: "On what street do The Simpsons live?",
+        answerList: ["Sheepberry Terrace", "Evergreen Terrace", "Woodview Terrace", "Pine Tree Terrace"],
+        answer: 1
+    },{
+        question: "How many kids do Apu and Manjula have?",
+        answerList: ["7", "6", "8", "9"],
+        answer: 2
+    }];
 
 
 });
