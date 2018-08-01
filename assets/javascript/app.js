@@ -60,6 +60,7 @@ $(document).ready(function () {
     var correctAnswer;
     var incorrectAnswer;
     var unanswered;
+    var secondsRemaining;
     var time;
     var answered;
     var userSelect;
@@ -111,8 +112,11 @@ $(document).ready(function () {
             choices.addClass('thisChoice');
             $('.answerChoices').append(choices);
         }
+
+        // Run countdown clock
         countdown();
-        //clicking an answer will pause the time and setup answerPage
+    
+        // Clicking an answer will stop the timer and setup the answer page
         $('.thisChoice').on('click',function(){
             userSelect = $(this).data('index');
             clearInterval(time);
@@ -120,6 +124,27 @@ $(document).ready(function () {
         });
     }
 
+    // Function to set up the countdown timer on the screen
+    function countdown(){
+        secondsRemaining = 20;
+        $('#timeLeft').html('<h3>Time Remaining: ' + secondsRemaining + '</h3>');
+        answered = true;
 
+        // Runs countdown timer function every 1 second for timer to go down
+        time = setInterval(showCountdown, 1000);
+    }
+
+    // Function to make the countdown timer go down by 1 second
+    function showCountdown(){
+        secondsRemaining--;
+        $('#timeLeft').html('<h3>Time Remaining: ' + secondsRemaining + '</h3>');
+        if(secondsRemaining < 1){
+            clearInterval(time);
+            answered = false;
+            answerPage();
+        }
+    }
+
+    
 
     });
