@@ -76,8 +76,15 @@ $(document).ready(function () {
 
     //  Functions go here
 
-    // When start button is cliked, we hide that button and start the newGame function
+    // When start button is clicked, we hide that button and start the newGame function
     $('#start-button').on('click', function () {
+        $(this).hide();
+        $("#start-title").hide();
+        newGame();
+    });
+
+    // When start over button is clicked, start a new game
+    $('#startOverBtn').on('click', function(){
         $(this).hide();
         newGame();
     });
@@ -178,5 +185,20 @@ $(document).ready(function () {
         }
     }
 
+    // Function to show final scoreboard at the end of the game
+    function scoreboard(){
+        $('#timeLeft').empty();
+        $('#message').empty();
+        $('#correctedAnswer').empty();
+        $('#gif').empty();
+    
+        $('#finalMessage').html(messages.finished);
+        $('#correctAnswers').html("Correct Answers: " + correctAnswer);
+        $('#incorrectAnswers').html("Incorrect Answers: " + incorrectAnswer);
+        $('#unanswered').html("Unanswered: " + unanswered);
+        $('#restart-button').addClass('reset');
+        $('#restart-button').show();
+        $('#restart-button').html('Restart?');
+    }
 
 });
