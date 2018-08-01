@@ -72,4 +72,14 @@ $(document).ready(function () {
         finished: "Alright! Let's see how well you did."
     }
 
+
+    //  Functions go here
+
+    // When start button is cliked, we hide that button and start the newGame function
+    $('#start-button').on('click', function(){
+        $(this).hide();
+        newGame();
+    });
+
+
     });
