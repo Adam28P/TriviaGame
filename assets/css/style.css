@@ -4,16 +4,21 @@ margin: 0 auto;
 width:960px;
 }
 
-h1, h2, h3{
+h1, h2{
     color:yellow;
     text-shadow: 2px 1.5px #000000;
 }
 
+h3{
+    color:black;
+}
+
 .container{
-    margin-top:20px;
-    background: url(../images/tv-png.png) no-repeat;
+    margin-top:15px;
+    background: url(../images/tv-png.png) no-repeat center center fixed;
     position:relative;
     height:720px;
+    
 }
 
 #start-title{
@@ -26,4 +31,36 @@ h1, h2, h3{
 position: absolute;
     top:45%;
     left:40%;
+}
+
+#timeLeft{
+    position: absolute;
+    top:15%;
+    right:30%;
+}
+
+#currentQuestion{
+    position: absolute;
+    top:15%;
+    left:17%;   
+}
+
+.question{
+    position: absolute;
+    top:25%;
+    left:15%;
+    width:50%;
+}
+
+.answerChoices{
+    position: absolute;
+    top:40%;
+    left:15%;
+    font-size: 25px;
+    color:black;
+    font-weight: bold;
+}
+
+.answerChoices:hover{
+    cursor: pointer;
 }

@@ -84,7 +84,7 @@ $(document).ready(function () {
     });
 
     // When start over button is clicked, start a new game
-    $('#startOverBtn').on('click', function(){
+    $('#restart-button').on('click', function(){
         $(this).hide();
         newGame();
     });
@@ -134,7 +134,7 @@ $(document).ready(function () {
     // Function to set up the countdown timer on the screen
     function countdown() {
         secondsRemaining = 20;
-        $('#timeLeft').html('<h3>Time Remaining: ' + secondsRemaining + '</h3>');
+        $('#timeLeft').html('<h3>Time Left: ' + secondsRemaining + '</h3>');
         answered = true;
 
         // Runs countdown timer function every 1 second for timer to go down
@@ -144,7 +144,7 @@ $(document).ready(function () {
     // Function to make the countdown timer go down by 1 second
     function showCountdown() {
         secondsRemaining--;
-        $('#timeLeft').html('<h3>Time Remaining: ' + secondsRemaining + '</h3>');
+        $('#timeLeft').html('<h3>Time Left: ' + secondsRemaining + '</h3>');
         if (secondsRemaining < 1) {
             clearInterval(time);
             answered = false;
@@ -169,11 +169,11 @@ $(document).ready(function () {
         } else if ((userSelect != rightAnswerIndex) && (answered == true)) {
             incorrectAnswer++;
             $('#message').html(messages.incorrect);
-            $('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
+            $('#correctedAnswer').html('The correct answer is: ' + rightAnswerText);
         } else {
             unanswered++;
             $('#message').html(messages.endTime);
-            $('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
+            $('#correctedAnswer').html('The correct answer is: ' + rightAnswerText);
             answered = true;
         }
 
