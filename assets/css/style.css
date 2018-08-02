@@ -5,5 +5,25 @@ width:960px;
 }
 
 h1, h2, h3{
-    color:black;
+    color:yellow;
+    text-shadow: 2px 1.5px #000000;
+}
+
+.container{
+    margin-top:20px;
+    background: url(../images/tv-png.png) no-repeat;
+    position:relative;
+    height:720px;
+}
+
+#start-title{
+    position: absolute;
+    top:25%;
+    left:25%;
+}
+
+#start-button{
+position: absolute;
+    top:45%;
+    left:40%;
 }
