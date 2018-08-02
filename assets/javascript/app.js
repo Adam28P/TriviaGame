@@ -108,7 +108,7 @@ $(document).ready(function () {
         $('#correctedAnswer').empty();
         answered = true;
 
-        $('#currentQuestion').html('Question ' + (currentQuestion + 1) + ' out of ' + triviaQuestions.length);
+        $('#currentQuestion').html('Question ' + (currentQuestion + 1) + ' of ' + triviaQuestions.length);
         $('.question').html('<h2>' + triviaQuestions[currentQuestion].question + '</h2>');
 
         // Loop through answers in array

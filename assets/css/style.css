@@ -15,7 +15,7 @@ h3{
 
 .container{
     margin-top:15px;
-    background: url(../images/tv-png.png) no-repeat center center fixed;
+    background: url(../images/tv-png.png) no-repeat;
     position:relative;
     height:720px;
     
