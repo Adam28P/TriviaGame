@@ -64,3 +64,15 @@ position: absolute;
 .answerChoices:hover{
     cursor: pointer;
 }
+
+#message{
+    position: absolute;
+    top:25%;
+    left:15%;
+}
+
+#correctedAnswer{
+    position: absolute;
+    top:30%;
+    left:15%;
+}
