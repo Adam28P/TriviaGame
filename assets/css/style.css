@@ -1,37 +1,17 @@
 
 body{
-/* background: #90f17e; */
-/* margin: 0 auto;
-width:960px; */
 background: #f9c4ca;
 }
 
-h1, h2{
-    color:white;
-    text-shadow: 2px 1.5px #000000;
-}
-
-h3{
+h1, h2, h3{
     color:black;
 }
 
-.container{
-    margin-top:15px;
-    width:870px;
+.answerChoices:hover{
+    cursor: pointer;
 }
 
-.panel{
-    background: url(../images/tv-png.png);
-    flex:1 1;
-    height:660px;
-    background-repeat: no-repeat;
-    background-size: contain;
-     margin:4vmin;
-    overflow:hidden;
-    position:relative;
-    padding:20px;
-} 
-
+/* 
 #start-title{
     position: absolute;
     top:25%;
@@ -72,10 +52,6 @@ position: absolute;
     font-weight: bold;
 }
 
-.answerChoices:hover{
-    cursor: pointer;
-}
-
 #message{
     position: absolute;
     top:25%;
@@ -86,4 +62,4 @@ position: absolute;
     position: absolute;
     top:30%;
     left:15%;
-} 
+}  */
