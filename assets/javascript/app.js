@@ -134,7 +134,7 @@ $(document).ready(function () {
     // Function to set up the countdown timer on the screen
     function countdown() {
         secondsRemaining = 20;
-        $('#timeLeft').html('<h3>Time Left: ' + secondsRemaining + '</h3>');
+        $('#timeLeft').html('<h5>Time Left: ' + secondsRemaining + '</h5>');
         answered = true;
 
         // Runs countdown timer function every 1 second for timer to go down
@@ -144,7 +144,7 @@ $(document).ready(function () {
     // Function to make the countdown timer go down by 1 second
     function showCountdown() {
         secondsRemaining--;
-        $('#timeLeft').html('<h3>Time Left: ' + secondsRemaining + '</h3>');
+        $('#timeLeft').html('<h5>Time Left: ' + secondsRemaining + '</h5>');
         if (secondsRemaining < 1) {
             clearInterval(time);
             answered = false;
