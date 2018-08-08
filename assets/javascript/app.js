@@ -70,7 +70,7 @@ $(document).ready(function () {
         correct: "Cowabunga! That's right!",
         incorrect: "D'oh! That's wrong!",
         endTime: "Time is up!",
-        finished: "Alright! Let's see how well you did."
+        finished: "That's all we've got! Let's see how well you did."
     }
 
 
@@ -116,7 +116,7 @@ $(document).ready(function () {
             var choices = $('<div>');
             choices.text(triviaQuestions[currentQuestion].answerChoices[i]);
             choices.attr({ 'data-index': i });
-            choices.addClass('thisChoice');
+            choices.addClass('thisChoice btn btn-info');
             $('.answerChoices').append(choices);
         }
 
@@ -156,6 +156,7 @@ $(document).ready(function () {
     function answerCheck() {
         $('#currentQuestion').empty();
         $('.thisChoice').empty();
+        $('.answerChoices').empty();
         $('.question').empty();
         $('#timeLeft').empty();
 
@@ -196,7 +197,7 @@ $(document).ready(function () {
         $('#correctAnswers').html("Correct Answers: " + correctAnswer);
         $('#incorrectAnswers').html("Incorrect Answers: " + incorrectAnswer);
         $('#unanswered').html("Unanswered: " + unanswered);
-        $('#restart-button').addClass('reset');
+        $('#restart-button').addClass('reset btn btn-info');
         $('#restart-button').show();
         $('#restart-button').html('Restart?');
     }
