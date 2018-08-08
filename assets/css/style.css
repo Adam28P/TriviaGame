@@ -1,6 +1,6 @@
 
 body{
-background: #ffd712;
+background: url(../images/clouds-01.jpg);
 }
 
 h1, h2, h3{
@@ -11,19 +11,24 @@ h1, h2, h3{
     cursor: pointer;
 }
 
-/* 
-#start-title{
-    position: absolute;
-    top:25%;
-    left:25%;
+.jumbotron{
+    background: #ffd712;
 }
 
-#start-button{
-position: absolute;
-    top:45%;
-    left:40%;
+#logo1{
+    width:100%;
+    margin-top: 50px;
+    margin-right:15px;
+    margin-bottom:60px;
+
 }
 
+
+.startContent{
+    text-align: center;
+}
+
+/*  
 #timeLeft{
     position: absolute;
     top:15%;

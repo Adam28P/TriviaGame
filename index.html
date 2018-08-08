@@ -21,29 +21,59 @@
 
 <body>
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
 
-    <div class="jumbotron">
-        <h2 id="start-title">The Simpsons Trivia Game</h2>
-        <button class='btn btn-danger' id='start-button'>Start</button>
+            </div>
+            <div class="col">
+                <img id="logo1" src="assets/images/logo.png" alt="Simpsons logo" />
+            </div>
+            <div class="col">
 
-        <!-- Question page -->
-        <div id=timeLeft></div>
-        <div>
-            <h3 id=currentQuestion></h3>
+            </div>
+
+
         </div>
-        <div class='question'></div>
-        <div class='answerChoices'></div>
+    </div>
 
-        <!-- Answer Page -->
-        <div id=message></div>
-        <div id=correctedAnswer></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
 
-        <!-- Scoreboard -->
-        <div id=finalMessage></div>
-        <div id=correctAnswers></div>
-        <div id=incorrectAnswers></div>
-        <div id=unanswered></div>
-        <div id='restart-button'></div>
+                <div class="jumbotron">
+
+                    <div class="startContent">
+                        <h2 id="start-title">The Simpsons Trivia Game</h2>
+
+                    </div>
+
+                    <div class="startContent">
+                        <button class='btn btn-danger' id='start-button'>Start</button>
+                    </div>
+
+
+                    <!-- Question page -->
+                    <div id=timeLeft></div>
+                    <div>
+                        <h3 id=currentQuestion></h3>
+                    </div>
+                    <div class='question'></div>
+                    <div class='answerChoices'></div>
+
+                    <!-- Answer Page -->
+                    <div id=message></div>
+                    <div id=correctedAnswer></div>
+
+                    <!-- Scoreboard -->
+                    <div id=finalMessage></div>
+                    <div id=correctAnswers></div>
+                    <div id=incorrectAnswers></div>
+                    <div id=unanswered></div>
+                    <div id='restart-button'></div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Link to app.js -->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
