@@ -169,8 +169,8 @@ $(document).ready(function () {
         var rightAnswerText = triviaQuestions[currentQuestion].answerChoices[triviaQuestions[currentQuestion].answer];
         var rightAnswerIndex = triviaQuestions[currentQuestion].answer;
 
-        $('#gif').html('<img src = "assets/images/'+ gifArray[currentQuestion] +'.gif" width = "400px">');
-        
+        $('#gif').html('<img src = "assets/images/'+ gifArray[currentQuestion] +'.gif">');
+
         // Checks to see if answer is correct, incorrect, or unanswered
         if ((userSelect == rightAnswerIndex) && (answered == true)) {
             correctAnswer++;

@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5{
     background: #ffd712;
 }
 
-#logo1{
+#logo{
     width:100%;
     margin-top: 50px;
     margin-right:15px;
@@ -34,3 +34,31 @@ h1, h2, h3, h4, h5{
 #message, #correctedAnswer, #gif{
     text-align:center;
 }
+
+#gif img{
+    max-width:100%;
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { 
+    #gif img{
+        max-width:400px;
+    }
+ }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { 
+    #gif img{
+        max-width:400px;
+    }
+ }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { 
+    #gif img{
+        max-width:400px;
+    }
+ }
