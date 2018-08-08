@@ -31,43 +31,6 @@ h1, h2, h3, h4, h5{
     margin-top:10px;
 }
 
-/*  
-#timeLeft{
-    position: absolute;
-    top:15%;
-    right:30%;
+#message, #correctedAnswer{
+    text-align:center;
 }
-
-#currentQuestion{
-    position: absolute;
-    top:15%;
-    left:17%;   
-}
-
-.question{
-    position: absolute;
-    top:25%;
-    left:15%;
-    width:50%;
-}
-
-.answerChoices{
-    position: absolute;
-    top:40%;
-    left:15%;
-    font-size: 25px;
-    color:black;
-    font-weight: bold;
-}
-
-#message{
-    position: absolute;
-    top:25%;
-    left:15%;
-}
-
-#correctedAnswer{
-    position: absolute;
-    top:30%;
-    left:15%;
-}  */
