@@ -71,6 +71,7 @@ $(document).ready(function () {
     var rightSound = new Audio('assets/music/smart.mp3');
     var lostSound = new Audio('assets/music/nevertry.mp3');
     var winSound = new Audio('assets/music/woohoo.wav');
+    var startSound = new Audio('assets/music/anykey.mp3');
 
     // Create message variable that has an object with different message properties
     var messages = {
@@ -86,6 +87,7 @@ $(document).ready(function () {
 
     // When start button is clicked, we hide that button and start the newGame function
     $('#start-button').on('click', function () {
+        startSound.pause();
         $(this).hide();
         $("#start-title").hide();
         $("hr").show();
@@ -207,7 +209,7 @@ $(document).ready(function () {
     function scoreboard() {
         if (correctAnswer >= 7) {
             winSound.play();
-        }else{
+        } else {
             lostSound.play();
         }
         $("hr").hide();
