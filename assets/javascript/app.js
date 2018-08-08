@@ -73,6 +73,7 @@ $(document).ready(function () {
         finished: "That's all we've got! Let's see how well you did."
     }
 
+    $( "hr" ).hide();
 
     //  Functions go here
 
@@ -80,6 +81,7 @@ $(document).ready(function () {
     $('#start-button').on('click', function () {
         $(this).hide();
         $("#start-title").hide();
+        $( "hr" ).show();
         newGame();
     });
 
@@ -104,6 +106,7 @@ $(document).ready(function () {
 
     // Function to show current question and answers
     function newQuestion() {
+        $( "hr" ).show();
         $('#message').empty();
         $('#correctedAnswer').empty();
         answered = true;
@@ -154,6 +157,7 @@ $(document).ready(function () {
 
     // Function to calculate if the answer is correct or not
     function answerCheck() {
+        $( "hr" ).hide();
         $('#currentQuestion').empty();
         $('.thisChoice').empty();
         $('.answerChoices').empty();
@@ -163,7 +167,7 @@ $(document).ready(function () {
         var rightAnswerText = triviaQuestions[currentQuestion].answerChoices[triviaQuestions[currentQuestion].answer];
         var rightAnswerIndex = triviaQuestions[currentQuestion].answer;
 
-        //checks to see correct, incorrect, or unanswered
+        // Checks to see if answer is correct, incorrect, or unanswered
         if ((userSelect == rightAnswerIndex) && (answered == true)) {
             correctAnswer++;
             $('#message').html(messages.correct);
@@ -188,6 +192,7 @@ $(document).ready(function () {
 
     // Function to show final scoreboard at the end of the game
     function scoreboard(){
+        $( "hr" ).hide();
         $('#timeLeft').empty();
         $('#message').empty();
         $('#correctedAnswer').empty();
