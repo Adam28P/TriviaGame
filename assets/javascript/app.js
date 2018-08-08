@@ -71,7 +71,7 @@ $(document).ready(function () {
     var rightSound = new Audio('assets/music/smart.mp3');
     var lostSound = new Audio('assets/music/nevertry.mp3');
     var winSound = new Audio('assets/music/woohoo.wav');
-    var startSound = new Audio('assets/music/anykey.mp3');
+    var startSound = new Audio('assets/music/theme.mp3');
 
     // Create message variable that has an object with different message properties
     var messages = {
@@ -80,6 +80,11 @@ $(document).ready(function () {
         endTime: "Time is up!",
         finished: "That's all we've got! Let's see how well you did."
     }
+
+    // Play background music when web page loads
+    window.onload = function () {
+        startSound.play();
+    };
 
     $("hr").hide();
 
