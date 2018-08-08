@@ -56,6 +56,7 @@ $(document).ready(function () {
     }];
 
     // Initialize variables
+    var gifArray = ['question1', 'question2', 'question3', 'question4', 'question5', 'question6', 'question7', 'question8', 'question9', 'question10', 'question11', 'question12', 'question13'];
     var currentQuestion;
     var correctAnswer;
     var incorrectAnswer;
@@ -107,6 +108,7 @@ $(document).ready(function () {
     // Function to show current question and answers
     function newQuestion() {
         $( "hr" ).show();
+        $('#gif').empty();
         $('#message').empty();
         $('#correctedAnswer').empty();
         answered = true;
@@ -167,6 +169,8 @@ $(document).ready(function () {
         var rightAnswerText = triviaQuestions[currentQuestion].answerChoices[triviaQuestions[currentQuestion].answer];
         var rightAnswerIndex = triviaQuestions[currentQuestion].answer;
 
+        $('#gif').html('<img src = "assets/images/'+ gifArray[currentQuestion] +'.gif" width = "400px">');
+        
         // Checks to see if answer is correct, incorrect, or unanswered
         if ((userSelect == rightAnswerIndex) && (answered == true)) {
             correctAnswer++;
@@ -193,6 +197,7 @@ $(document).ready(function () {
     // Function to show final scoreboard at the end of the game
     function scoreboard(){
         $( "hr" ).hide();
+        $('#gif').empty();
         $('#timeLeft').empty();
         $('#message').empty();
         $('#correctedAnswer').empty();
