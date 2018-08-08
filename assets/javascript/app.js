@@ -199,7 +199,7 @@ $(document).ready(function () {
         $('#unanswered').html("Unanswered: " + unanswered);
         $('#restart-button').addClass('reset btn btn-info');
         $('#restart-button').show();
-        $('#restart-button').html('Restart?');
+        $('#restart-button').html('Restart');
     }
 
 });
