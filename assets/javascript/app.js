@@ -66,6 +66,12 @@ $(document).ready(function () {
     var answered;
     var userSelect;
 
+
+    var wrongSound = new Audio('assets/music/doh.mp3');
+    var rightSound = new Audio('assets/music/smart.mp3');
+    var lostSound = new Audio('assets/music/nevertry.mp3');
+    var winSound = new Audio('assets/music/woohoo.wav');
+
     // Create message variable that has an object with different message properties
     var messages = {
         correct: "Cowabunga! That's right!",
@@ -74,7 +80,7 @@ $(document).ready(function () {
         finished: "That's all we've got! Let's see how well you did."
     }
 
-    $( "hr" ).hide();
+    $("hr").hide();
 
     //  Functions go here
 
@@ -82,12 +88,12 @@ $(document).ready(function () {
     $('#start-button').on('click', function () {
         $(this).hide();
         $("#start-title").hide();
-        $( "hr" ).show();
+        $("hr").show();
         newGame();
     });
 
     // When start over button is clicked, start a new game
-    $('#restart-button').on('click', function(){
+    $('#restart-button').on('click', function () {
         $(this).hide();
         newGame();
     });
@@ -107,7 +113,7 @@ $(document).ready(function () {
 
     // Function to show current question and answers
     function newQuestion() {
-        $( "hr" ).show();
+        $("hr").show();
         $('#gif').empty();
         $('#message').empty();
         $('#correctedAnswer').empty();
@@ -159,7 +165,7 @@ $(document).ready(function () {
 
     // Function to calculate if the answer is correct or not
     function answerCheck() {
-        $( "hr" ).hide();
+        $("hr").hide();
         $('#currentQuestion').empty();
         $('.thisChoice').empty();
         $('.answerChoices').empty();
@@ -169,17 +175,20 @@ $(document).ready(function () {
         var rightAnswerText = triviaQuestions[currentQuestion].answerChoices[triviaQuestions[currentQuestion].answer];
         var rightAnswerIndex = triviaQuestions[currentQuestion].answer;
 
-        $('#gif').html('<img src = "assets/images/'+ gifArray[currentQuestion] +'.gif">');
+        $('#gif').html('<img src = "assets/images/' + gifArray[currentQuestion] + '.gif">');
 
         // Checks to see if answer is correct, incorrect, or unanswered
         if ((userSelect == rightAnswerIndex) && (answered == true)) {
+            rightSound.play();
             correctAnswer++;
             $('#message').html(messages.correct);
         } else if ((userSelect != rightAnswerIndex) && (answered == true)) {
+            wrongSound.play();
             incorrectAnswer++;
             $('#message').html(messages.incorrect);
             $('#correctedAnswer').html('The correct answer is: ' + rightAnswerText);
         } else {
+            wrongSound.play();
             unanswered++;
             $('#message').html(messages.endTime);
             $('#correctedAnswer').html('The correct answer is: ' + rightAnswerText);
@@ -187,22 +196,27 @@ $(document).ready(function () {
         }
 
         if (currentQuestion == (triviaQuestions.length - 1)) {
-            setTimeout(scoreboard, 5000)
+            setTimeout(scoreboard, 6500)
         } else {
             currentQuestion++;
-            setTimeout(newQuestion, 5000);
+            setTimeout(newQuestion, 6500);
         }
     }
 
     // Function to show final scoreboard at the end of the game
-    function scoreboard(){
-        $( "hr" ).hide();
+    function scoreboard() {
+        if (correctAnswer >= 7) {
+            winSound.play();
+        }else{
+            lostSound.play();
+        }
+        $("hr").hide();
         $('#gif').empty();
         $('#timeLeft').empty();
         $('#message').empty();
         $('#correctedAnswer').empty();
         $('#gif').empty();
-    
+
         $('#finalMessage').html(messages.finished);
         $('#correctAnswers').html("Correct Answers: " + correctAnswer);
         $('#incorrectAnswers').html("Incorrect Answers: " + incorrectAnswer);
